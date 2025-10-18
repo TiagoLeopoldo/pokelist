@@ -1,0 +1,115 @@
+header {
+  width: 100%;
+}
+
+/* Estiliza container logo e seção de filtro e busca */
+.logo-container, .search-filter-section {
+  background-color: azure;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  padding: 0.5rem;
+  margin: 0.2rem;
+  border-radius: 1rem;
+  border: 0.4rem solid #1e3064;
+}
+
+.pkm {
+  width: 60%;
+}
+
+.pkmball {
+  width: 10%;
+}
+
+.search-filter-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.search-container {
+  margin: 0 auto;
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+}
+
+/* estiliza barra de busca */
+.input-search {
+  width: 100%;
+  border: 1px solid black;
+  height: 2rem;
+  border-radius: 1rem 0 0 1rem;
+  padding: 0 0.5rem;
+  font-size: 1rem;
+  outline: none;
+  transition: border 0.2s ease, box-shadow 0.2s ease;
+}
+
+.input-search:focus {
+  border: 2px solid black;
+  box-shadow: 0 0 4px rgba(0, 0, 0, 0.3);
+}
+
+/* estiliza botão de busca */
+.search-button {
+  border: 1px solid black;
+  background-color: #C8D0D8;
+  border-radius: 0 1rem 1rem 0;
+  padding: 0.2rem 1rem;
+  cursor: pointer;
+  transition: transform 0.1s ease, background-color 0.2s ease;
+  height: 2rem;
+  font-size: 1rem;
+}
+
+.search-button:active {
+  transform: scale(0.95);
+  background-color: #d0eaff;
+}
+
+
+/* estiliza lista e botões de filtro */
+.buttons-list {
+  width: 100%;
+  padding: 1rem;
+  display: flex;
+  flex-flow: row wrap;
+  gap: 6px;
+  align-items: center;
+  justify-content: center;
+}
+
+
+.filter-button {
+  border: 1px solid black;
+  background-color: #C8D0D8;
+  border-radius: 0.5rem;
+  padding: 0.2rem;
+  cursor: pointer;
+  transition: transform 0.1s ease, background-color 0.2s ease;
+}
+
+.filter-button:active {
+  transform: scale(0.95);
+  background-color: #d0eaff;
+}
+
+@media (min-width: 1024px) {
+  /* Estiliza container logo, section search and filter */
+  .logo-container, .search-filter-section {
+    margin: 0.5rem;
+    padding: 0.8rem;
+  }
+}
+
+@media (min-width: 1440px) {
+  /* Estiliza container logo, section search and filter */
+  .logo-container, .search-filter-section {
+    margin: 1rem;
+    padding: 1rem;
+  }
+}
+
