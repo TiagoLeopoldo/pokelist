@@ -13,7 +13,7 @@ const Header = () => {
       </div>
 
       <section className="search-filter-section">
-        <p>Busque o Pokémon ou selecione o tipo:</p>
+        <p>Buscar Pokémon | Selecionar por tipo:</p>
 
         <div className="search-container">
           <input className="input-search" type="text" />
@@ -43,4 +43,4 @@ const Header = () => {
   )
 }
 
-export default Header
+export default Header;
