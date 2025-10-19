@@ -5,11 +5,13 @@ import './App.css';
 
 function App() {
   const [selectedType, setSelectedType] = useState<string | null>(null)
+  const [searchPokemon, setSearchPokemon] = useState<string | null>(null);
+
   return (
     <>
-      <Header onSelectType={setSelectedType} />
+      <Header onSelectType={setSelectedType} onSearch={setSearchPokemon}/>
       <main>
-        <PokemonList selectedType={selectedType} />
+        <PokemonList selectedType={selectedType} searchPokemon={searchPokemon} />
       </main>
     </>
   )
