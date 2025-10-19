@@ -1,10 +1,15 @@
 import { useState, useEffect } from 'react';
 import './PokemonList.css';
 import PokemonCard from '../components/PokemonCard';
-import { getPokemon, pokemonDetails } from '../services/pokedex.service.ts';
+import { getPokemon, pokemonDetails, getPokemonByType } from '../services/pokedex.service.ts';
 import type { Pokemon, PokemonsCardData } from '../types/types.ts';
 
-const PokemonList = () => {
+interface PokemonListProps {
+  selectedType: string | null;
+}
+
+
+const PokemonList = ( { selectedType }: PokemonListProps) => {
   const [pokemons, setPokemons] = useState<PokemonsCardData[]>([]);
   const [offset, setOffset] = useState<number>(0);
   const [isLoading, setIsLoading] = useState<boolean>(false);
@@ -13,6 +18,22 @@ const PokemonList = () => {
   useEffect(() => {
     const loadInitialData = async () => {
       setIsLoading(true);
+
+      if (selectedType) {
+        const typePokemons = await getPokemonByType(selectedType);
+        const detailed = await Promise.all(
+          typePokemons.map(async (pokemon: Pokemon) => {
+            const details = await pokemonDetails(pokemon.name);
+            return {
+              id: details.id,
+              name: details.name,
+              image: details.sprites.front_default,
+              type: details.types[0].type.name,
+            };
+          })
+        );
+        setPokemons(detailed);
+      } else {
       const data = await getPokemon(20, offset);
       const detaleidPokemons = await Promise.all(
         data.results.map(async (pokemon: Pokemon) => {
@@ -26,10 +47,11 @@ const PokemonList = () => {
         })
       );
       setPokemons(detaleidPokemons);
+    }
           setIsLoading(false);
     };
     loadInitialData();
-  }, [offset])
+  }, [offset, selectedType])
 
   return (
     <>

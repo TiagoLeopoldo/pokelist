@@ -1,13 +1,15 @@
+import { useState } from 'react';
 import Header from './components/Header';
 import PokemonList from './pages/PokemonList';
-import './App.css'
+import './App.css';
 
 function App() {
+  const [selectedType, setSelectedType] = useState<string | null>(null)
   return (
     <>
-      <Header />
+      <Header onSelectType={setSelectedType} />
       <main>
-        <PokemonList />
+        <PokemonList selectedType={selectedType} />
       </main>
     </>
   )
