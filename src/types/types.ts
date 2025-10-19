@@ -27,3 +27,24 @@ export interface PokemonsCardData {
   name: string;
   type: string;
 }
+
+export interface PokemonType {
+  name: string;
+  url: string;
+}
+
+export interface PokemonTypeResponse {
+  results: PokemonType[];
+}
+
+export interface PokemonByTypeEntry {
+  pokemon: {
+    name: string;
+    url: string;
+  };
+  slot: number;
+}
+
+export interface PokemonByTypeResponse {
+  pokemon: PokemonByTypeEntry[];
+}
