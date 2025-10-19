@@ -10,6 +10,34 @@
   border: 0.2rem solid #1e3064;
 }
 
+.pokemon-number-container {
+  width: 100%;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.pokemon-number-container p {
+  color: aliceblue;
+  background-color: black;
+  border-radius: 10rem;
+  font-size: 0.9rem;
+  font-weight: bold;
+  padding: 0.3rem;
+}
+
+.pokemon-name-container {
+  background-color: aliceblue;
+  border: 1px solid black;
+  border-radius: 1rem;
+  padding: 0.3rem;
+}
+
+.pokemon-name-container {
+  font-size: 0.9rem;
+  font-weight: bold;
+  text-align: center;
+}
+
 @media (min-width: 1024px) {
   /* Estiliza container dos cards de pokémons */
   .pokemon-card {

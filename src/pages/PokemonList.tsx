@@ -55,7 +55,7 @@ const PokemonList = ( { selectedType }: PokemonListProps) => {
 
   return (
     <>
-      {isLoading ? <p>Carregando...</p> : (
+      {isLoading ? <h1>Carregando...</h1> : (
         <section className='section-pokemon-list'>
           {pokemons.map((pokemon: PokemonsCardData) => (
             <PokemonCard {...pokemon} />

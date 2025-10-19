@@ -28,9 +28,9 @@ const PokemonCard = ({ id, name, image, type }: PokemonsCardData) => {
 
   return (
     <section className="pokemon-card" style={{ backgroundImage: typeColors[type] || 'radial-gradient(circle at center, #eee, #ccc)' }}>
-      <div className="pokemon-number-container"><p>#{String(id).padStart(3, '0')}</p></div>
+      <div className="pokemon-number-container"><p>#{String(id).padStart(2, '0')}</p></div>
       <div className="pokemon-img-container"><img src={image} alt={name} /></div>
-      <div className="pokemon-name-container"><h3>{name.charAt(0).toUpperCase() + name.slice(1)}</h3></div>
+      <div className="pokemon-name-container"><p>{name.charAt(0).toUpperCase() + name.slice(1)}</p></div>
     </section>
   )
 }
