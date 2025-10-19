@@ -7,11 +7,12 @@ import type { PokemonType } from '../types/types.ts';
 
 interface HeaderProps {
   onSelectType: (type: string | null) => void;
+  onSearch: (term: string) => void;
 }
 
-
-const Header = ({ onSelectType }: HeaderProps) => {
+const Header = ({ onSelectType, onSearch }: HeaderProps) => {
   const [types, setTypes] = useState<PokemonType[]>([]);
+  const [searchPokemon, setSearchPokemon] = useState<string>('');
 
   useEffect(() => {
     const loadTypes = async () => {
@@ -35,8 +36,8 @@ const Header = ({ onSelectType }: HeaderProps) => {
         <p>Buscar Pokémon | Selecionar por tipo:</p>
 
         <div className="search-container">
-          <input className="input-search" type="text" />
-          <button className="search-button">Buscar</button>
+          <input className="input-search" type="text" value={searchPokemon} onChange={(e) => setSearchPokemon(e.target.value)} placeholder="ex.: 25 ou Pikachu"/>
+          <button className="search-button" onClick={() => onSearch(searchPokemon.trim().toLowerCase())}>Buscar</button>
         </div>
 
         <ul className="buttons-list">
