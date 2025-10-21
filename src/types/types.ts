@@ -10,7 +10,14 @@ export interface Pokemon {
 export interface PokemonDetails {
   id: number;
   name: string;
-  sprites: { front_default: string };
+  sprites: {
+    front_default: string;
+    other?: {
+      ['official-artwork']?: {
+        front_default: string;
+      };
+    };
+  };
   types: {
     slot: number;
     type: {
@@ -18,8 +25,23 @@ export interface PokemonDetails {
       url: string;
     };
   }[];
+  abilities: {
+    ability: {
+      name: string;
+      url: string;
+    };
+    is_hidden: boolean;
+    slot: number;
+  }[];
+  stats: {
+    base_stat: number;
+    effort: number;
+    stat: {
+      name: string;
+      url: string;
+    };
+  }[];
 }
-
 
 export interface PokemonsCardData {
   id: number;
