@@ -1,3 +1,4 @@
+// Tipos utilizados em toda a aplicação
 export interface PokemonResponse {
   results: Pokemon[];
 }
@@ -48,6 +49,7 @@ export interface PokemonsCardData {
   image: string;
   name: string;
   type: string;
+  onClick?: () => void;
 }
 
 export interface PokemonType {

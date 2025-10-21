@@ -1,3 +1,4 @@
+/* Estiliza o card individual do Pokémon */
 .pokemon-card {
   background-color: azure;
   display: flex;
@@ -10,12 +11,14 @@
   border: 0.2rem solid #1e3064;
 }
 
+/* Container do número do Pokémon */
 .pokemon-number-container {
   width: 100%;
   display: flex;
   justify-content: flex-end;
 }
 
+/* Estiliza o número do Pokémon */
 .pokemon-number-container p {
   color: aliceblue;
   background-color: black;
@@ -25,29 +28,27 @@
   padding: 0.3rem;
 }
 
+/* Container do nome do Pokémon */
 .pokemon-name-container {
   background-color: aliceblue;
   border: 1px solid black;
   border-radius: 1rem;
   padding: 0.3rem;
-}
-
-.pokemon-name-container {
   font-size: 0.9rem;
   font-weight: bold;
   text-align: center;
 }
 
+/* Responsividade para telas médias */
 @media (min-width: 1024px) {
-  /* Estiliza container dos cards de pokémons */
   .pokemon-card {
     margin: 0.5rem;
     padding: 0.8rem;
   }
 }
 
+/* Responsividade para telas grandes */
 @media (min-width: 1440px) {
-  /* Estiliza container dos cards de pokémons */
   .pokemon-card {
     margin: 1rem;
     padding: 1rem;

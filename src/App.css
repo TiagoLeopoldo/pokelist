@@ -1,4 +1,4 @@
-/* ===== RESET GERAL ===== */
+/* Reset geral de estilos */
 * {
   margin: 0;
   padding: 0;
@@ -10,7 +10,7 @@ html, body, main {
   height: 100%;
 }
 
-/* ===== Body ======= */
+/* Estilo base do body */
 body {
   background-color: #ff695b;
   font-family: sans-serif;
@@ -18,18 +18,18 @@ body {
   -webkit-font-smoothing: antialiased;
 }
 
-/* ===== LINKS ===== */
+/* Estilo para links */
 a {
   text-decoration: none;
   color: inherit;
 }
 
-/* ===== LISTAS ===== */
+/* Estilo para listas */
 ul, ol {
   list-style: none;
 }
 
-/* ===== BOTÕES ===== */
+/* Estilo para botões */
 button {
   border: none;
   background: none;
@@ -37,14 +37,14 @@ button {
   font-family: inherit;
 }
 
-/* ===== INPUTS E TEXTAREAS ===== */
+/* Estilo para inputs e textareas */
 input, textarea {
   border: none;
   outline: none;
   font-family: inherit;
 }
 
-/* ===== HEADINGS ===== */
+/* Estilo para títulos */
 h1, h2, h3, h4, h5, h6 {
   font-weight: normal;
 }
