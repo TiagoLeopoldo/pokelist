@@ -6,10 +6,12 @@ import './PokemonDetailsPage.css';
 import typeBackgrounds from '../constants/typeBackgrounds';
 
 const PokemonDetailsPage = () => {
+  // Obtém o nome do Pokémon da URL
   const { name = '' } = useParams<{ name?: string }>();
   const [pokemon, setPokemon] = useState<PokemonDetails | null>(null);
   const [loading, setLoading] = useState(true);
 
+  // Busca os detalhes do Pokémon ao montar o componente
   useEffect(() => {
     const fetchDetails = async () => {
       setLoading(true);
@@ -33,9 +35,12 @@ const PokemonDetailsPage = () => {
 
   return (
     <section className="pokemon-detail">
-
+      {/* Link para voltar à lista */}
       <Link to="/" className="back-link">← Voltar para a lista</Link>
-      <div className="pokemon-identity-container"
+
+      {/* Identidade visual do Pokémon */}
+      <div
+        className="pokemon-identity-container"
         style={{
           backgroundImage: `url(${backgroundType})`,
           backgroundSize: 'cover',
@@ -44,24 +49,28 @@ const PokemonDetailsPage = () => {
       >
         <h1>{pokemon.name.charAt(0).toUpperCase() + pokemon.name.slice(1)}</h1>
         <img
-          src={pokemon.sprites.other?.['official-artwork']?.front_default || pokemon.sprites.front_default}
+          src={
+            pokemon.sprites.other?.['official-artwork']?.front_default ||
+            pokemon.sprites.front_default
+          }
           alt={pokemon.name}
         />
       </div>
 
+      {/* Seção de detalhes */}
       <div className="details-section">
         <div className="details">
           <h3>Tipos</h3>
-          <p>{pokemon.types.map((type: { type: { name: string } }) => type.type.name).join(', ')}</p>
+          <p>{pokemon.types.map((t) => t.type.name).join(', ')}</p>
         </div>
         <div className="details">
           <h3>Habilidades</h3>
-          <p>{pokemon.abilities.map((a: { ability: { name: string } }) => a.ability.name).join(', ')}</p>
+          <p>{pokemon.abilities.map((a) => a.ability.name).join(', ')}</p>
         </div>
         <div className="details">
           <h3>Estatísticas</h3>
           <ul>
-            {pokemon.stats.map((stat: { stat: { name: string }; base_stat: number }) => (
+            {pokemon.stats.map((stat) => (
               <li key={stat.stat.name}>
                 <strong>{stat.stat.name}:</strong> {stat.base_stat}
               </li>
@@ -71,6 +80,6 @@ const PokemonDetailsPage = () => {
       </div>
     </section>
   );
-}
+};
 
 export default PokemonDetailsPage;
